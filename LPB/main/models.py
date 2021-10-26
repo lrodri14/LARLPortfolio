@@ -89,7 +89,23 @@ class Project(models.Model):
         super().save(*args, **kwargs)
 
 
+class Certification(models.Model):
+    """
+        DOCSTRING:
+        This certification main model is responsible for storing the Certifications obtained
+    """
+    institution = models.CharField('Institution', max_length=100, blank=False, null=True, help_text="Indicate the institution which provided the certification")
+    name = models.CharField('Certification Name', max_length=100, blank=False, null=True, help_text="Indicate the certification name")
+    url = models.URLField('Verification URL', blank=True, null=True, help_text='Provide a verification url if existent')
+    image = models.ImageField('Certification Image', blank=True, null=True, help_text='Provide a certification image if no verification url is available ')
 
+    def __str__(self):
+        return self.name
+
+    def __save__(self, *args, **kwargs):
+        self.name = self.name.title()
+        self.institution = self.institution.title()
+        super().save(*args, **kwargs)
 
 
 
