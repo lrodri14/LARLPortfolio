@@ -47,6 +47,9 @@ class Tool(models.Model):
     name = models.CharField('Tool Name', max_length=25, blank=False, null=True, help_text='Indicate the tool name')
     expertise = models.IntegerField(blank=False, null=True, help_text='Indicate expertise level for the tool specified', choices=EXPERTISE_CHOICES)
 
+    def __str__(self):
+        return '{} ({})'.format(self.name, self.tool_type)
+
     def __save__(self, *args, **kwargs):
         self.name = self.name.capitalize()
         super().save(*args, **kwargs)
@@ -58,6 +61,9 @@ class IndustryKnowledge(models.Model):
         This main IndustryKnowledge model is responsible of storing all the industries with experience in.
     """
     name = models.CharField('Industry Name', max_length=50, blank=False, null=True, unique=True, help_text='Indicate the industry')
+
+    def __str__(self):
+        return self.name
 
     def __save__(self, *args, **kwargs):
         self.name = self.name.title()
@@ -75,6 +81,12 @@ class Project(models.Model):
     logo = models.ImageField('Logo', blank=False, null=True, help_text="Provide the project's logo")
     url = models.URLField('Project App', blank=False, null=True, help_text="Provide the project's direction")
 
+    def __str__(self):
+        return self.name
+
+    def __save__(self, *args, **kwargs):
+        self.name = self.name.title()
+        super().save(*args, **kwargs)
 
 
 
