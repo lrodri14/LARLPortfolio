@@ -1,0 +1,19 @@
+nav{
+    width: 100vw;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    text-align: center;
+    width: calc(100% / 3);
+    display: inline-block;
+}
+
+a, a:visited, a:hover, a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
