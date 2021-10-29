@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react'
 import { Route, Switch } from 'react-router-dom'
-import './App.css';
 import Main from './pages/Main'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
