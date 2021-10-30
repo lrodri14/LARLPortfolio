@@ -7,6 +7,7 @@ h1, h2{
     position: absolute;
     left: 5%;
     top: 30%;
+    animation: fadeIn 2s linear forwards;
 }
 
 .welcome__message{
@@ -34,6 +35,7 @@ h1, h2{
     right: 15%;
     height: 700px;
     width: 500px;
+    animation: fadeIn 2s linear forwards;
 }
 
 .linkedIn{
@@ -75,5 +77,14 @@ h1, h2{
         right: 0%;
         height: 500px;
         width: 370px;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
     }
 }
