@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Welcome from '../components/Welcome/Welcome'
 
 function Main(){
-    return <h1>This is the main or biography page</h1>
+    return (
+        <Fragment>
+            <Welcome />
+        </Fragment>
+    )
 }
 
 export default Main
