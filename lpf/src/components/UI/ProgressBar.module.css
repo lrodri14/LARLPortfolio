@@ -12,11 +12,34 @@
 }
 
 .progress__bar{
-    width: 16.6666666667%;
     height: 10px;
     border-radius: 10px;
     background-color: #FFFFFF;
-    transition: width 10s;
+    transition: width 2s;
+}
+
+.main{
+    width: calc(16.6666666667% * 1);
+}
+
+.about-me{
+    width: calc(16.6666666667% * 2);
+}
+
+.skills{
+    width: calc(16.6666666667% * 3);
+}
+
+.certifications{
+    width: calc(16.6666666667% * 4);
+}
+
+.projects{
+    width: calc(16.6666666667% * 5);
+}
+
+.contact-me{
+    width: calc(16.6666666667% * 6);
 }
 
 .progress__section{

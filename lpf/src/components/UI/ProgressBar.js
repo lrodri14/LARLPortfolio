@@ -1,16 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ProgressContext from '../../store/progress_context'
 import styles from './ProgressBar.module.css'
 
 function ProgressBar(props){
+    const ctx = useContext(ProgressContext)
     return (<div className={styles.progress}>
-        <div className={styles.progress__bar}></div>
+        <div className={`${styles.progress__bar} ${styles[ctx.activeSection.class]}`}></div>
         <div className={styles.progress__sections}>
-            <div className={styles.progress__section}>Main</div>
-            <div className={styles.progress__section}>About Me</div>
-            <div className={styles.progress__section}>Skills</div>
-            <div className={styles.progress__section}>Certifications</div>
-            <div className={styles.progress__section}>Projects</div>
-            <div className={styles.progress__section}>Contact Me</div>
+            <div className={styles.progress__section}>{ctx.activeSection.text}</div>
         </div>
     </div>)
 }
