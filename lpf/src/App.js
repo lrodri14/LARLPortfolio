@@ -10,6 +10,7 @@ import styles from './App.module.css'
 function App() {
     return (
         <Fragment>
+            <img className={styles.logo} src='/logo.png' alt='Luis Adolfo\'s Portfolio Logo/>
             <Navbar/>
             <Switch>
                 <Route path="/" exact>
