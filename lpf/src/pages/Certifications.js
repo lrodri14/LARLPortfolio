@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 
-function AboutMe(){
+function Certifications(){
     return <Fragment></Fragment>
 }
 
-export default AboutMe
+export default Certifications

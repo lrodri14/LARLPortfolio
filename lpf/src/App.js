@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Main from './pages/Main'
 import AboutMe from './pages/AboutMe'
+import Certifications from './pages/Certifications'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Navbar from './components/UI/Navbar'
@@ -21,6 +22,9 @@ function App() {
                 </Route>
                 <Route path="/skills">
                     <Skills/>
+                </Route>
+                <Route path="/certifications">
+                    <Certifications/>
                 </Route>
                 <Route path="/projects">
                     <Projects/>
