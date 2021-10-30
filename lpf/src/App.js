@@ -6,12 +6,14 @@ import Certifications from './pages/Certifications'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Navbar from './components/UI/Navbar'
+import ProgressBar from './components/UI/ProgressBar'
 import styles from './App.module.css'
 
 function App() {
     return (
         <Fragment>
             <img className={styles.logo} src='/logo.png' alt='logo'/>
+            <ProgressBar/>
             <Navbar/>
             <Switch>
                 <Route path="/" exact>
