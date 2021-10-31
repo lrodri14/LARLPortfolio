@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import ProgressContext from '../../store/progress_context'
+import ProgressContext from '../../../store/progress_context'
 import styles from './ProgressBar.module.css'
 
 function ProgressBar(props){

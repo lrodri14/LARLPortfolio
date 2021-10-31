@@ -1,50 +1,86 @@
-.menu-button{
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
 .navbar{
-    position: absolute;
-    right: 10px;
-    top: 30%;
     font-family: 'Lato', sans-serif;
     font-family: 'Source Sans Pro', sans-serif;
-    animation: fadeIn 1s linear forwards;
+    animation: fadeIn 0.3s linear forwards;
 }
 
-.navbar__list{
+.navbar__close{
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.navbar__content{
     list-style: none;
 }
 
-.navbar__item{
-    text-align: left;
-    width: 100px;
-    margin: 10px 0px;
+.navbar__section{
+    display: inline-block;
+    width: calc(100% / 6);
+    text-align: center;
 }
 
-.navbar__list a{
-    display: block;
-    text-decoration: none;
+.navbar__section a{
     color: #FFFFFF;
-}
-
-.navbar__list a:hover{
-    color: #d17936;
+    text-decoration: none;
     transition: 0.5s;
 }
 
-@media screen and (max-width: 1024px){
-    .menu-button{
+.navbar__section a:hover{
+    color: #6e6f70;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 1023px){
+
+    .navbar{
+        background-color: #6e6f70;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+    }
+
+    .navbar__close{
+        display: block;
         font-size: 48px;
+    }
+
+    .navbar__content{
+        margin-top: 300px;
+    }
+
+    .navbar__section{
+        display: block;
+        width: 100%;
+        font-size: 32px;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .navbar__section a:hover{
+        color: #333333;
     }
 }
 
 @media screen and (max-width: 767px){
     .menu-button{
         font-size: 32px;
+    }
+
+    .navbar__close{
+        font-size: 32px;
+    }
+
+    .navbar__content{
+        margin-top: 250px;
+    }
+
+    .navbar__section{
+        font-size: 24px;
     }
 }
 
