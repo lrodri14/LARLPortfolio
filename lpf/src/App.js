@@ -1,24 +1,17 @@
 import React, { Fragment } from 'react'
-import { Route, Switch, useLocation } from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import Main from './pages/Main'
 import AboutMe from './pages/AboutMe'
 import Certifications from './pages/Certifications'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import ContactMe from './pages/ContactMe'
-import Navbar from './components/UI/Navbar/Navbar'
-import ProgressBar from './components/UI/ProgressBar'
-import styles from './App.module.css'
-import logo from './images/logo.png'
+import MainHeader from './components/UI/MainHeader/MainHeader'
 
 function App() {
-    const location = useLocation()
-
     return (
         <Fragment>
-            <img className={styles.logo} src={logo} alt='logo'/>
-            <ProgressBar/>
-            {location.pathname !== '/' && <Navbar/>}
+            <MainHeader />
             <Switch>
                 <Route path="/" exact>
                     <Main/>
@@ -39,7 +32,7 @@ function App() {
                     <ContactMe/>
                 </Route>
             </Switch>
-        </Fragment>
+        </Fragment >
     )
 }
 
