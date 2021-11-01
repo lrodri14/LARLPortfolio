@@ -80,6 +80,7 @@ class Project(models.Model):
     end_date = models.DateField('End Date', blank=False, null=True, help_text='Indicate the date the project was deployed into production')
     logo = models.ImageField('Logo', blank=False, null=True, help_text="Provide the project's logo")
     url = models.URLField('Project App', blank=False, null=True, help_text="Provide the project's direction")
+    description = models.CharField('Project Description', max_length=250, blank=False, null=True, help_text='Provide a project description')
 
     def __str__(self):
         return self.name
