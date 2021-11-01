@@ -16,10 +16,18 @@
 
 @media screen and (max-width: 1023px){
     .details{
-        width: 95vw;
         position: static;
+        width: 95vw;
+        font-size: 24px;
     }
 }
+
+@media screen and (max-width: 767px){
+    .details{
+        font-size: 18px;
+    }
+}
+
 
 @keyframes fadeIn{
     0%{

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import AboutMeFacts from './AboutMeFacts'
 import NextButton from '../UI/NextButton'
 import styles from './AboutMeDetails.module.css'
@@ -9,16 +9,14 @@ function AboutMeDetails(){
             <h1>About Me</h1>
             <hr className={styles.details__divider}/>
             <p className={styles.details__message}>
-                My name is Luis Rodriguez, I'm a passionate Full Stack Developer with {new Date().getFullYear() - 2019} years of experience
-                based in Choluteca, Honduras, Central America.<br/><br/>
-                My love for development came from a really young age, seeing my dad design
-                and create tools with code from scratch was something that amazed me, so {new Date().getFullYear() - 2019} years ago i decided to break
-                into the field.<br/><br/>
-                Challenging myself and learning new stuff everyday are just some of the things that i enjoy. I'm always up to date with the latest technologies
-                and best practices so i can ship with the most efficient software.
+                My name is Luis Rodriguez, I'm a passionate 22 year old Full Stack Developer based in Choluteca, Honduras, Central America.<br/><br/>
+                Building tools from scratch and challenging myself are just some of the stuff i enjoy, been able to solve a problem with code just amazes me,
+                not to mention the satisfaction at the end of the day when you were able to solve those problems.<br/><br/>
+                I'm always up to date with the latest technologies, trends and best practices, this way we're able to ship the most efficient tools to the public,
+                i'm always learning new stuff everyday, having the better tools in your toolbox and improving your skills are some of the things that differ you from the rest.
             </p>
             <AboutMeFacts />
-            <NextButton to='/skills' activateClass={'skills'}>Go to Skills</NextButton>
+            <NextButton to='/skills' activateClass={'skills'} >Skills</NextButton>
         </div>
     )
 }

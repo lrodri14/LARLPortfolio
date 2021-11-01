@@ -3,28 +3,25 @@
     left: 10%;
     bottom: 0%;
     height: 700px;
-    width: 500px;
+    width: 350px;
     z-index: -1;
     animation: fadeIn 2s linear forwards;
 }
 
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 1024px){
    .about-me-profile-pic{
-        height: 550px;
-        width: 420px;
-        left: 45%;
+        display: none;
     }
 }
 
 @media screen and (max-width: 767px){
    .about-me-profile-pic{
-        height: 400px;
-        width: 270px;
-        left: 27%;
-        bottom: 5%;
+        display: block;
+        height: 280px;
+        width: 130px;
+        left: 65%;
     }
 }
-
 
 @keyframes fadeIn{
     0%{

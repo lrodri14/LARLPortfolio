@@ -6,7 +6,7 @@ function AboutMeFacts(){
         <div className={styles['about-me-facts']}>
             <div>
                 <ul>
-                    <li>Name: Luis Adolfo Rodriguez Lopez</li>
+                    <li>Name: Luis Rodriguez</li>
                     <li>Age: {new Date().getFullYear() - 2000}</li>
                     <li>Phone: +504-3309-9408</li>
                     <li>Experience: {new Date().getFullYear() - 2019} years</li>
