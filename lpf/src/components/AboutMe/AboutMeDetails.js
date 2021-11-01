@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import AboutMeFacts from './AboutMeFacts'
 import NextButton from '../UI/NextButton'
 import styles from './AboutMeDetails.module.css'
