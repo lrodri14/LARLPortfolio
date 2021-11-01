@@ -1,0 +1,37 @@
+.about-me-profile-pic{
+    position: absolute;
+    left: 10%;
+    bottom: 0%;
+    height: 700px;
+    width: 500px;
+    z-index: -1;
+    animation: fadeIn 2s linear forwards;
+}
+
+@media screen and (max-width: 1023px){
+   .about-me-profile-pic{
+        height: 550px;
+        width: 420px;
+        left: 45%;
+    }
+}
+
+@media screen and (max-width: 767px){
+   .about-me-profile-pic{
+        height: 400px;
+        width: 270px;
+        left: 27%;
+        bottom: 5%;
+    }
+}
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
