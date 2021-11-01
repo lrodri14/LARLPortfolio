@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import ProgressBar from '../ProgressBar/ProgressBar'
-import Navbar from '../Navbar/Navbar'
+import ProgressBar from './ProgressBar'
+import Navbar from './Navbar'
 import logo from '../../../images/logo.png'
 import styles from './MainHeader.module.css'
 
