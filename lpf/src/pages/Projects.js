@@ -5,8 +5,8 @@ import ProjectCard from '../components/UI/Card/ProjectCard'
 const projects = [
     {
          name: 'Sealena',
-         startDate:'20/6/2020',
-         endDate:'4/9/2021',
+         startDate:'June 6, 2020',
+         endDate:'September 4, 2021',
          url:'https://www.sealena.com',
          description:"Sealena it's a Medical Information Management and Collaboration tool that helps Health Workers organize and communicate with their patients and colleagues easily."
     },
