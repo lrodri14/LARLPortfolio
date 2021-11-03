@@ -1,0 +1,30 @@
+.certification-card{
+    transition: 0.5s;
+}
+
+.certification-card--rotate{
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+
+.certification-card__logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.certification-card--rotate{
+    animation: rotate 0.5s linear forwards;
+}
+
+.certification-card__title{
+    text-align: left;
+}
+
+.certification-card__verif-image{
+    transform: rotateY(180deg);
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 0px;
+    text-align: center;
+}
