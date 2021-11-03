@@ -1,6 +1,6 @@
 import React from 'react'
 import AboutMeFacts from './AboutMeFacts'
-import NextButton from '../UI/NextButton'
+import NextButton from '../UI/NextButton/NextButton'
 import styles from './AboutMeDetails.module.css'
 
 function AboutMeDetails(){
