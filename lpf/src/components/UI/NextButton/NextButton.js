@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import ProgressContext from '../../store/progress_context'
+import ProgressContext from '../../../store/progress_context'
 import { Link } from 'react-router-dom'
 import styles from './NextButton.module.css'
 

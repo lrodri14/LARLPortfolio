@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import NextButton from '../components/UI/NextButton'
+import NextButton from '../components/UI/NextButton/NextButton'
 import pp from '../images/pp-bw.png'
 import styles from './Main.module.css'
 
