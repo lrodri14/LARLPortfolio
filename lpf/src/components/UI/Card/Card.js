@@ -10,8 +10,12 @@ function Card(props){
         })
     }
 
+    function cardClickHandler(){
+        props.onClick()
+    }
+
     return (
-            <div className={`${styles.card} ${isActive && styles['card--active']}`} onMouseEnter={toggleActiveHandler} onMouseLeave={toggleActiveHandler}>
+            <div className={`${styles.card} ${isActive && styles['card--active']} ${props.className}`} onClick={cardClickHandler} onMouseEnter={toggleActiveHandler} onMouseLeave={toggleActiveHandler}>
                 {props.children}
             </div>
     )
