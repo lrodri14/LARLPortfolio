@@ -5,24 +5,45 @@ from django.db import models
 # Create your models here.
 
 
-class SpeakingLanguage(models.Model):
+class SkillExpertise(models.Model):
+    """
+        DOCSTRING:
+        The SkillExpertise model is served as an Abstract Model responsible for storing skill names and expertise level
+        for different skills such as a speaking languages, tools and technologies as well as industry knowledge
+    """
+    EXPERTISE_CHOICES = (
+        (20, 'Novice'),
+        (40, 'Beginner'),
+        (60, 'Skillful'),
+        (80, 'Experienced'),
+        (100, 'Expert')
+    )
+
+    name = models.CharField(max_length=50, blank=False, null=True, help_text="Provide the Specified Skill Name", verbose_name="Skill Name", unique=True)
+    expertise_level = models.CharField(max_length=50, blank=False, null=True, help_text="Provide the Expertise Level for the specified skill", verbose_name="Expertise Level", choices=EXPERTISE_CHOICES)
+    icon = models.CharField(max_length=50, blank=True, null=True, help_text="Provide the icon code for the specified skill", verbose_name="Skill Icon Code", unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.name = self.name.title()
+        super().save(*args, **kwargs)
+
+    class Meta:
+        abstract = True
+
+
+class SpeakingLanguage(SkillExpertise):
     """
         DOCSTRING:
         This SpeakingLanguage model is responsible for storing all the Speaking Languages, we set a __str__ dunder method
         to display a default string format of the instance and we overwrote the save method, this way all the entries will
         be capitalized.
     """
-    name = models.CharField('Language', max_length=20, blank=False, null=True, unique=True, help_text='Indicate language')
-
-    def __str__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        self.name = self.name.capitalize()
-        super().save(*args, **kwargs)
 
 
-class Tool(models.Model):
+class Tool(SkillExpertise):
     """
         DOCSTRING:
         This main tool model is responsible of storing all the tools used in the career
@@ -35,39 +56,17 @@ class Tool(models.Model):
         ('OTHER', 'Other')
     )
 
-    EXPERTISE_CHOICES = (
-        (20, 'Novice'),
-        (40, 'Beginner'),
-        (60, 'Skillful'),
-        (80, 'Experienced'),
-        (100, 'Expert')
-    )
-
     tool_type = models.CharField('Tool Type', max_length=10, blank=False, null=True, help_text='Indicate the tool type', choices=TOOL_CHOICES)
-    name = models.CharField('Tool Name', max_length=25, blank=False, null=True, help_text='Indicate the tool name')
-    expertise = models.IntegerField(blank=False, null=True, help_text='Indicate expertise level for the tool specified', choices=EXPERTISE_CHOICES)
 
     def __str__(self):
         return '{} ({})'.format(self.name, self.tool_type)
 
-    def __save__(self, *args, **kwargs):
-        self.name = self.name.capitalize()
-        super().save(*args, **kwargs)
 
-
-class IndustryKnowledge(models.Model):
+class IndustryKnowledge(SkillExpertise):
     """
         DOCSTRING:
         This main IndustryKnowledge model is responsible of storing all the industries with experience in.
     """
-    name = models.CharField('Industry Name', max_length=50, blank=False, null=True, unique=True, help_text='Indicate the industry')
-
-    def __str__(self):
-        return self.name
-
-    def __save__(self, *args, **kwargs):
-        self.name = self.name.title()
-        super().save(*args, **kwargs)
 
 
 class Project(models.Model):
