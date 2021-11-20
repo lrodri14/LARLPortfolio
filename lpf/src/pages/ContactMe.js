@@ -1,9 +1,8 @@
-import React, {Fragment} from 'react'
+import React from 'react'
+import ContactMeForm from '../components/ContactMe/ContactMeForm'
 
 function ContactMe(){
-    return (
-        <Fragment></Fragment>
-    )
+    return <ContactMeForm />
 }
 
 export default ContactMe

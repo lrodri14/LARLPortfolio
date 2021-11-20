@@ -15,23 +15,6 @@ h1, h2{
     font-size: 48px;
 }
 
-.welcome__about-me-button{
-    border: 1px solid #FFFFFF;
-    color: #FFFFFF;
-    text-decoration: none;
-    background-color: transparent;
-    padding: 5px;
-    border-radius: 5px;
-    transition: background 0.5s, color 0.5s;
-}
-
-.welcome__about-me-button:hover{
-    background-color: #FFFFFF;
-    color: #666967;
-    cursor: pointer;
-    transition: background 0.5s, color 0.5s;
-}
-
 .profile-pic{
     position: absolute;
     bottom: 0%;

@@ -1,0 +1,65 @@
+.skills-board{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.speaking-languages-card{
+    height: 300px;
+    overflow: hidden;
+}
+
+.tools-and-tech-card{
+    height: 550px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: None;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 10px;
+}
+
+.industry-knowledge-card{
+    height: 200px;
+    overflow: hidden;
+}
+
+.next-button{
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1023px){
+
+    body{
+        overflow: auto;
+    }
+
+    .skills-board{
+        margin-top: 10px;
+        grid-template-columns: auto;
+        row-gap: 10px;
+    }
+
+    .tools-and-tech-card{
+        height: 500px;
+        overflow: auto;
+    }
+
+    .speaking-languages-card, .industry-knowledge-card{
+        max-height: None;
+        overflow: hidden;
+    }
+
+}

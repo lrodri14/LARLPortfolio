@@ -1,0 +1,21 @@
+.card{
+    padding: 10px;
+    background-color: #3d3d3d;
+    border-radius: 10px;
+    text-align: justify;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.card--active{
+    background-color: #525252;
+    transition: 0.3s;
+}
+
+.card a,
+.card a:active,
+.card a:visited,
+.card a:hover{
+    color: #FFFFFF;
+}

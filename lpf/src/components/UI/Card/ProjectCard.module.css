@@ -1,0 +1,18 @@
+.project-card{
+    transition: 0.5s;
+}
+
+.project-card__logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.project-card__rotate{
+    transform: rotateY(180deg);
+    transition: 0.5s;
+}
+
+.project-card__rotate .project-card__description{
+   transform: rotateY(180deg);
+}

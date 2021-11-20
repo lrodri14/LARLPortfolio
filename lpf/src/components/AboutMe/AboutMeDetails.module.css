@@ -1,0 +1,39 @@
+.details{
+    padding: 10px;
+    width: 600px;
+    position: relative;
+    left: 50%;
+    animation: fadeIn 2s linear forwards;
+}
+
+.divider{
+    border: 1px solid red;
+}
+
+.details{
+    text-align: justify;
+}
+
+@media screen and (max-width: 1023px){
+    .details{
+        position: static;
+        width: 95vw;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .details{
+        font-size: 18px;
+    }
+}
+
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}

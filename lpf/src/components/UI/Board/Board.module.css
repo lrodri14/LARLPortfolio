@@ -1,0 +1,21 @@
+.board{
+    display: grid;
+    grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+    grid-gap: 10px 1%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1023px){
+    .board{
+        grid-template-columns: auto auto;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .board{
+        grid-template-columns: auto;
+        margin-top: 0px;
+    }
+}
