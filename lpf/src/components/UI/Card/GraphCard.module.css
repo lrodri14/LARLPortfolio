@@ -1,0 +1,41 @@
+.graph i{
+    float: right;
+}
+
+.graph__labels{
+    display: inline-block;
+    width: 100%;
+}
+
+.graph__labels__label{
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+}
+
+.minimum{
+    float: left;
+}
+
+.maximum{
+   float: right;
+}
+
+.graph__bar{
+    display: inline-block;
+    background-color: #FFFFFF;
+    height: 10px;
+    animation: fill 1s ease forwards;
+}
+
+@keyframes fill{
+    0% {
+        width: 0%;
+    }
+
+    1%{
+        width: 1%;
+    }
+}
+
+

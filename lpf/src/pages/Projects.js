@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Board from '../components/UI/Board/Board'
+import NextButton from '../components/UI/NextButton/NextButton'
 import ProjectCard from '../components/UI/Card/ProjectCard'
+import styles from './Projects.module.css'
+
 
 const projects = [
     {
@@ -14,13 +17,16 @@ const projects = [
 
 function Projects(){
     return (
-        <Board>
-            {projects.map((project) => {
-                return (
-                    <ProjectCard key={project.name} name={project.name} startDate={project.startDate} endDate={project.endDate} url={project.url} description={project.description}/>
-                )
-            })}
-        </Board>
+        <Fragment>
+            <Board>
+                {projects.map((project) => {
+                    return (
+                        <ProjectCard key={project.name} name={project.name} startDate={project.startDate} endDate={project.endDate} url={project.url} description={project.description}/>
+                    )
+                })}
+            </Board>
+            <NextButton to='/contact-me' activateClass='contact-me' className={styles['next-button']}>Contact Me</NextButton>
+        </Fragment>
     )
 }
 

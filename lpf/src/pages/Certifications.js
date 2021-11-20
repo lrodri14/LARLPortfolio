@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Board from '../components/UI/Board/Board'
+import NextButton from '../components/UI/NextButton/NextButton'
 import CertificationCard from '../components/UI/Card/CertificationCard'
+import styles from './Certifications.module.css'
 
 const certifications = [
     {
@@ -43,11 +45,14 @@ const certifications = [
 
 function Certifications(){
     return (
-        <Board>
-            {certifications.map((cert) => {
-                return <CertificationCard key={cert.institution} institution={cert.institution} name={cert.name} url={cert.url}/>
-            })}
-        </Board>
+        <Fragment>
+            <Board>
+                {certifications.map((cert) => {
+                    return <CertificationCard key={cert.institution} institution={cert.institution} name={cert.name} url={cert.url}/>
+                })}
+            </Board>
+            <NextButton to='/projects' activateClass='projects' className={styles['next-button']}>Projects</NextButton>
+        </Fragment>
     )
 }
 

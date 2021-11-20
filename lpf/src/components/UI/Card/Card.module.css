@@ -1,10 +1,10 @@
 .card{
-    border: 1px solid #292928;
-    padding: 20px;
+    padding: 10px;
     background-color: #3d3d3d;
     border-radius: 10px;
     text-align: justify;
     cursor: pointer;
+    box-sizing: border-box;
     transition: 0.3s;
 }
 

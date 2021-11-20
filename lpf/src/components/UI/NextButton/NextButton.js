@@ -14,7 +14,13 @@ function NextButton(props){
         })
     }
 
-    return <Link to={props.to} className={styles.button} data-activate-class={props.activateClass} onClick={clickHandler}><i className="fas fa-play"></i> {props.children}</Link>
+    return (<Link to={props.to}
+                className={`${styles.button} ${props.className ? props.className : ''}`}
+                data-activate-class={props.activateClass}
+                onClick={clickHandler}>
+                    <i className="fas fa-play"></i>
+                    {props.children}
+            </Link>)
 }
 
 export default NextButton

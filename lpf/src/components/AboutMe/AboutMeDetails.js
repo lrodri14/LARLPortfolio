@@ -16,7 +16,7 @@ function AboutMeDetails(){
                 i'm always learning new stuff everyday, having the better tools in your toolbox and improving your skills are some of the things that differ you from the rest.
             </p>
             <AboutMeFacts />
-            <NextButton to='/skills' activateClass={'skills'} >Skills</NextButton>
+            <NextButton to='/skills' activateClass='skills'>Skills</NextButton>
         </div>
     )
 }
