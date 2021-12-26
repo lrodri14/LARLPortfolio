@@ -5,6 +5,7 @@
     text-align: justify;
     cursor: pointer;
     box-sizing: border-box;
+    display: inline-block;
     transition: 0.3s;
 }
 

@@ -2,8 +2,8 @@
     position: absolute;
     left: 10%;
     bottom: 0%;
-    height: 700px;
-    width: 350px;
+    height: 670px;
+    width: 320px;
     z-index: -1;
     animation: fadeIn 2s linear forwards;
 }
@@ -17,8 +17,8 @@
 @media screen and (max-width: 767px){
    .about-me-profile-pic{
         display: block;
-        height: 280px;
-        width: 130px;
+        height: 230px;
+        width: 110px;
         left: calc(100% - 135px);
     }
 }
