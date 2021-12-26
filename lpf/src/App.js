@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Route, Switch} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Main from './pages/Main'
 import AboutMe from './pages/AboutMe'
 import Certifications from './pages/Certifications'

@@ -1,13 +1,20 @@
-import React, { useContext } from 'react'
-import ProgressContext from '../../../store/progress_context'
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 import styles from './ProgressBar.module.css'
 
 function ProgressBar(props){
-    const ctx = useContext(ProgressContext)
+    const location = useLocation()
+    const pathname = location.pathname !== '/' ? location.pathname : 'main'
+    const activeSectionClass = pathname.replace('/', '')
+    let activeSectionText = activeSectionClass.replace('-', ' ').split(' ')
+    activeSectionText = activeSectionText.map((word) => {
+        return word[0].toUpperCase() + word.substring(1)
+    })
+    activeSectionText = activeSectionText.toString().replace(',', ' ')
     return (<div className={styles.progress}>
-        <div className={`${styles.progress__bar} ${styles[ctx.activeSection.class]}`}></div>
+        <div className={`${styles.progress__bar} ${styles[activeSectionClass]}`}></div>
         <div className={styles.progress__sections}>
-            <div className={styles.progress__section}>{ctx.activeSection.text}</div>
+            <div className={styles.progress__section}>{activeSectionText}</div>
         </div>
     </div>)
 }

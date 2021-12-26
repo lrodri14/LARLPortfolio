@@ -36,7 +36,7 @@
 
     .navbar{
         background-color: #6e6f70;
-        position: absolute;
+        position: fixed;
         top: 0%;
         left: 0%;
         width: 100vw;

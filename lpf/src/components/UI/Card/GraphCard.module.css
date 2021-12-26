@@ -1,3 +1,7 @@
+.graph-card{
+    height: 120px;
+}
+
 .graph i{
     float: right;
 }
