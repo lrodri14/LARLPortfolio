@@ -61,6 +61,14 @@
     border: 1px solid #cc4339;
 }
 
+.contact-me-form-success{
+    color: #2ede21;
+}
+
+.contact-me-form-error{
+    color: #fa4b4b;
+}
+
 @media screen and (max-width: 1023px){
     .contact-me-form{
         width: 75%;
