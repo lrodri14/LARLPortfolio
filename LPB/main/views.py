@@ -1,11 +1,28 @@
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from django.core.mail import EmailMessage
-from .serializers import EmailSerializer
+from .serializers import ToolSerializer, SpeakingLanguageSerializer, IndustryKnowledgeSerializer, EmailSerializer
 from .forms import DirectContactForm
+from .models import *
 
 # Create your views here.
+
+
+class ToolsAndTechnologies(ListAPIView):
+    queryset = Tool.objects.all()
+    serializer_class = ToolSerializer
+
+
+class SpeakingLanguages(ListAPIView):
+    queryset = SpeakingLanguage.objects.all()
+    serializer_class = SpeakingLanguageSerializer
+
+
+class IndustriesKnowledge(ListAPIView):
+    queryset = IndustryKnowledge.objects.all()
+    serializer_class = IndustryKnowledgeSerializer
 
 
 class SendMail(APIView):

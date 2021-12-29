@@ -20,7 +20,7 @@ class SkillExpertise(models.Model):
     )
 
     name = models.CharField(max_length=50, blank=False, null=True, help_text="Provide the Specified Skill Name", verbose_name="Skill Name", unique=True)
-    expertise_level = models.CharField(max_length=50, blank=False, null=True, help_text="Provide the Expertise Level for the specified skill", verbose_name="Expertise Level", choices=EXPERTISE_CHOICES)
+    expertise_level = models.IntegerField('Expertise Level', blank=False, null=True, help_text="Provide the Expertise Level for the specified skill", choices=EXPERTISE_CHOICES)
     icon = models.CharField(max_length=50, blank=True, null=True, help_text="Provide the icon code for the specified skill", verbose_name="Skill Icon Code", unique=True)
 
     def __str__(self):
