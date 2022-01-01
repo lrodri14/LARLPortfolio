@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useReducer, useRef } from 'react'
+import useHttp from '../../hooks/useHttp'
 import LoadingSpinner from '../UI/LoadingSpinner/LoadingSpinner'
 import styles from './ContactMeForm.module.css'
 
@@ -42,11 +43,9 @@ function formValidityReducer(prevState, action){
 
 function ContactMeForm(){
 
-    const [isLoading, setIsLoading] = useState(false)
     const [formIsValid, setFormIsValid] = useState(false)
     const [formState, formDispatch] = useReducer(formValidityReducer, initialFormState)
-    const [success, setSuccess] = useState('')
-    const [error, setError] = useState('')
+    const { isLoading, error, response, sendRequest } = useHttp()
 
     const fnRef = useRef()
     const lnRef = useRef()
@@ -59,16 +58,6 @@ function ContactMeForm(){
         setFormIsValid(firstNameIsValid && lastNameIsValid && emailIsValid && messageIsValid)
     }, [firstNameIsValid, lastNameIsValid, emailIsValid, messageIsValid])
 
-    async function sendMail(content){
-        const response = await fetch('http://127.0.0.1:8000/main/send_mail/',{method: 'POST',body: JSON.stringify(content),headers: { "Content-Type": "application/json", "Accept": "application/json" }})
-        setIsLoading(false)
-        if (!response.ok){
-            setError(response.error)
-            return
-        }
-        const data = await response.json()
-        setSuccess(data.data)
-    }
 
     function identificationInputHandler(event){
         const target = event.target
@@ -98,11 +87,8 @@ function ContactMeForm(){
     function submitHandler(event){
         event.preventDefault()
         if (formIsValid){
-            setIsLoading(true)
-            setSuccess('')
-            setError('')
             const content = {first_name: formState.firstNameValue, last_name: formState.lastNameValue, email: formState.emailValue, message: formState.messageValue}
-            sendMail(content)
+            sendRequest({endPoint: 'send_mail/', method: 'POST', headers:{'Content-Type': 'application/json'}, content: content})
         }else if (!formState.firstNameIsValid){
             fnRef.current.focus()
         }else if (!formState.lastNameIsValid){
@@ -147,8 +133,8 @@ function ContactMeForm(){
                       ref={messageRef}
                       onChange={messageInputHandler}
                       onBlur={touchedHandler}/>
-            {error && <p className={styles['contact-me-form-error']}>{error}</p>}
-            {success && <p className={styles['contact-me-form-success']}>{success}</p>}
+            {error && error.error.email.map((error) => { return <p className={styles['contact-me-form-error']} key={error}>{error}</p>})}
+            {response && <p className={styles['contact-me-form-success']}>{response.data}</p>}
             <button type="submit">Contact Me</button>
         </form>
     )
