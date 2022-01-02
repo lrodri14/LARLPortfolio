@@ -22,6 +22,11 @@ class IndustryKnowledgeSerializer(BaseSkillsSerializer):
         model = IndustryKnowledge
 
 
+class CertificationSerializer(BaseSkillsSerializer):
+    class Meta(BaseSkillsSerializer.Meta):
+        model = Certification
+
+
 class EmailSerializer(Serializer):
     first_name = CharField()
     last_name = CharField()
