@@ -95,10 +95,10 @@ class Certification(models.Model):
         This certification main model is responsible for storing the Certifications obtained
     """
     institution = models.CharField('Institution', max_length=100, blank=False, null=True, help_text="Indicate the institution which provided the certification")
-    institution_logo = models.ImageField('Institution Logo', blank=False, null=True, help_text="Provide the Institution Logo")
+    institution_logo = models.ImageField('Institution Logo', blank=False, null=True, help_text="Provide the Institution Logo", upload_to='certifications/institutions_logos/')
     name = models.CharField('Certification Name', max_length=100, blank=False, null=True, help_text="Indicate the certification name")
     url = models.URLField('Verification URL', blank=True, null=True, help_text='Provide a verification url if existent')
-    image = models.ImageField('Certification Image', blank=True, null=True, help_text='Provide a certification image if no verification url is available ')
+    image = models.ImageField('Certification Image', blank=True, null=True, help_text='Provide a certification image if no verification url is available', upload_to='certifications/certifications_verifications/')
 
     def __str__(self):
         return self.name
