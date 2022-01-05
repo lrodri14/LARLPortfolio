@@ -8,7 +8,7 @@ function useHttp(){
     const sendRequest = useCallback(async (requestConfig) => {
         try{
             setIsLoading(true)
-                        setError(false)
+            setError(false)
             setResponse(false)
             const response = await fetch(url + requestConfig.endPoint,
                                         {method: requestConfig.method ? requestConfig.method : 'GET',
@@ -16,6 +16,8 @@ function useHttp(){
                                         body: requestConfig.content ? JSON.stringify(requestConfig.content) : null })
 
             const data = await response.json()
+
+            console.log(data)
 
             if (!response.ok){
                 const error = new Error()
