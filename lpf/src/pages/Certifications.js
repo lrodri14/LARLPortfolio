@@ -1,54 +1,23 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import useHttp from '../hooks/useHttp'
 import Board from '../components/UI/Board/Board'
 import NextButton from '../components/UI/NextButton/NextButton'
 import CertificationCard from '../components/UI/Card/CertificationCard'
 import styles from './Certifications.module.css'
 
-const certifications = [
-    {
-        institution: 'Python Institute',
-        name: 'Python Programmer: Beginner',
-        url: 'https://www.google.com',
-        image: ''
-    },
-    {
-        institution: 'New York University',
-        name: 'Information Visualization: Programming with D3.js',
-        url: 'https://www.google.com',
-        image: ''
-    },
-    {
-        institution: 'New York University1',
-        name: 'Information Visualization: Programming with D3.js',
-        url: 'https://www.google.com',
-        image: ''
-    },
-        {
-        institution: 'New York University2',
-        name: 'Information Visualization: Programming with D3.js',
-        url: 'https://www.google.com',
-        image: ''
-    },
-        {
-        institution: 'New York University3',
-        name: 'Information Visualization: Programming with D3.js',
-        url: 'https://www.google.com',
-        image: ''
-    },
-        {
-        institution: 'New York University4',
-        name: 'Information Visualization: Programming with D3.js',
-        url: 'https://www.google.com',
-        image: ''
-    },
-]
-
 function Certifications(){
+
+    const {response, sendRequest} = useHttp()
+
+    useEffect(() => {
+        sendRequest({endPoint: 'certifications/'})
+    }, [sendRequest])
+
     return (
         <Fragment>
             <Board>
-                {certifications.map((cert) => {
-                    return <CertificationCard key={cert.institution} institution={cert.institution} name={cert.name} url={cert.url}/>
+                {response && response.map((cert) => {
+                    return <CertificationCard key={cert.id} certification={cert}/>
                 })}
             </Board>
             <NextButton to='/projects' activateClass='projects' className={styles['next-button']}>Projects</NextButton>
