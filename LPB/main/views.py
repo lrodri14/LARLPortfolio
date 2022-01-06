@@ -30,6 +30,11 @@ class Certification(ListAPIView):
     serializer_class = CertificationSerializer
 
 
+class Project(ListAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+
 class SendMail(APIView):
 
     serializer_class = EmailSerializer
