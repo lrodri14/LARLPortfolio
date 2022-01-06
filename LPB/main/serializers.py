@@ -27,6 +27,11 @@ class CertificationSerializer(BaseSkillsSerializer):
         model = Certification
 
 
+class ProjectSerializer(BaseSkillsSerializer):
+    class Meta(BaseSkillsSerializer.Meta):
+        model = Project
+
+
 class EmailSerializer(Serializer):
     first_name = CharField()
     last_name = CharField()
