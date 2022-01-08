@@ -17,8 +17,6 @@ function useHttp(){
 
             const data = await response.json()
 
-            console.log(data)
-
             if (!response.ok){
                 const error = new Error()
                 error.error = data.error
