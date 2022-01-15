@@ -12,7 +12,6 @@ function Projects(){
         sendRequest({endPoint: 'projects/'})
     }, [sendRequest])
 
-
     return (
         <Fragment>
             <Board>
