@@ -15,7 +15,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
 DOT_ENV = os.path.join(BASE_DIR, '.env')
 load_dotenv(DOT_ENV)
 
@@ -23,7 +22,7 @@ load_dotenv(DOT_ENV)
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@5z+@#hz8j1y7-+m(_0&lw--mij_juk)93epls)l8z*9)gq_fz'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -140,7 +139,6 @@ TO_EMAIL = os.environ.get('TO_EMAIL')
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR]
 
 # Media files
 MEDIA_URL = '/media/'
