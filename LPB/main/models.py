@@ -77,7 +77,7 @@ class Project(models.Model):
     name = models.CharField('Project Name', max_length=50, blank=False, null=True, unique=True, help_text='Indicate the project name')
     start_date = models.DateField('Start Date', blank=False, null=True, help_text='Indicate the date the project was born')
     end_date = models.DateField('End Date', blank=False, null=True, help_text='Indicate the date the project was deployed into production')
-    logo = models.ImageField('Logo', blank=False, null=True, help_text="Provide the project's logo")
+    logo = models.ImageField('Logo', blank=False, null=True, help_text="Provide the project's logo", upload_to='project_logos/')
     url = models.URLField('Project App', blank=False, null=True, help_text="Provide the project's direction")
     description = models.CharField('Project Description', max_length=250, blank=False, null=True, help_text='Provide a project description')
 
