@@ -8,18 +8,18 @@ import styles from './Certifications.module.css'
 
 function Certifications(){
 
-    const {isLoading, error, response, sendRequest} = useHttp()
+    const {isLoading, error, data, sendRequest} = useHttp()
 
     useEffect(() => {
-        sendRequest({endPoint: 'certifications/'})
-    }, [sendRequest])
+        sendRequest({url: 'certifications/'})
+    }, [])
 
     return (
         <Fragment>
             {!isLoading && !error &&
                 <Fragment>
                     <Board>
-                        {response && response.map((cert) => {
+                        {data && data.map((cert) => {
                             return <CertificationCard key={cert.id} certification={cert}/>
                         })}
                     </Board>

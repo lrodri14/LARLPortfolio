@@ -7,9 +7,9 @@ function AboutMeFacts(){
             <div>
                 <ul>
                     <li>Name: Luis Rodriguez</li>
-                    <li>Age: {new Date().getFullYear() - 2000}</li>
+                    <li>Age: 23</li>
                     <li>Phone: +504-3309-9408</li>
-                    <li>Experience: {new Date().getFullYear() - 2019} years</li>
+                    <li>Email: adolfoluis.rl@gmail.com</li>
                 </ul>
             </div>
             <div>

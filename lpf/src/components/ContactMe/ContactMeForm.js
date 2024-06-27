@@ -45,7 +45,7 @@ function ContactMeForm(){
 
     const [formIsValid, setFormIsValid] = useState(false)
     const [formState, formDispatch] = useReducer(formValidityReducer, initialFormState)
-    const { isLoading, error, response, sendRequest } = useHttp()
+    const { isLoading, error, success, data, sendRequest } = useHttp()
 
     const fnRef = useRef()
     const lnRef = useRef()
@@ -86,9 +86,11 @@ function ContactMeForm(){
 
     function submitHandler(event){
         event.preventDefault()
+        event.stopPropagation()
         if (formIsValid){
             const content = {first_name: formState.firstNameValue, last_name: formState.lastNameValue, email: formState.emailValue, message: formState.messageValue}
-            sendRequest({endPoint: 'send_mail/', method: 'POST', headers:{'Content-Type': 'application/json'}, content: content})
+            console.log(content)
+            sendRequest({url: 'send_mail/', method: 'POST', headers:{'Content-Type': 'application/json'}, body: content})
         }else if (!formState.firstNameIsValid){
             fnRef.current.focus()
         }else if (!formState.lastNameIsValid){
@@ -133,8 +135,8 @@ function ContactMeForm(){
                       ref={messageRef}
                       onChange={messageInputHandler}
                       onBlur={touchedHandler}/>
-            {error && error.error.email.map((error) => { return <p className={styles['contact-me-form-error']} key={error}>{error}</p>})}
-            {response && <p className={styles['contact-me-form-success']}>{response.data}</p>}
+            {error && <p className={styles['contact-me-form-error']} key={error}>{error}</p>}
+            {data && <p className={styles['contact-me-form-success']}>{data.data}</p>}
             <button type="submit">Contact Me</button>
         </form>
     )

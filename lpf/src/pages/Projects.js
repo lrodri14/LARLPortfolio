@@ -7,11 +7,11 @@ import ProjectCard from '../components/UI/Card/ProjectCard'
 import styles from './Projects.module.css'
 
 function Projects(){
-    const {isLoading, error, response: projects, sendRequest} = useHttp()
+    const {isLoading, error, data: projects, sendRequest} = useHttp()
 
     useEffect(() => {
-        sendRequest({endPoint: 'projects/'})
-    }, [sendRequest])
+        sendRequest({url: 'projects/'})
+    }, [])
 
     return (
         <Fragment>
